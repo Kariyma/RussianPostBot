@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "russianposttrackbot-yy9j",
+  "private_key_id": "8efe667ce169ac7ef27c9e20e0d65f129f7f8b52",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCEpO0s5Bc0JQwO\nUfWufrR91TDCD5hwqoiBrxNmr17eGVK3OrhRnzmjKrxMQpTe8bmB786rSPDyNA7r\no9psL5rpIaEkINpoxfUE8W0ZgCLcPX8nBuT0vtIIHH+zdbBPB/KRY2+fNwS4flMT\nYWdgIowpYp6sK7nUJ/lDlLI93u94veBgTdY5V+Fe92AOCcRGBfQ+P8gzQL8IJ0Td\nh3i+bv4F6CYrYxFC8HBhQQgA3551Gea4qAk0taJWChTK3IYV74ratS6vY8rQJ/Qi\nXZEYLYm4nltfka8CrN/AKBF9gFy2QmHc5BUvkNp36GkHcFvgoM1eetNGMbgU3YVV\nmHZ4m0e1AgMBAAECggEAAJhbSHW+T9X5KBHUHs6modZkA8KxqkGymSV7dnX/Enu+\ngYJlQVF5R482NfNVvxOzEAONYwEcri6YJnI4S/vGA5/p1RSLMUEOOPdClj/41VZ7\ncgH3qt8czEg56nRpaKNR20zyCVC+qSpTpFDc7kRrXb605fz1mj6r3X5xZnxM5sNw\nHpIQthZrBRhRmwxDbWvBoqwGL/AoujKoPbOFd1GZ7+7b9XgX8+1FMhIlKLhE0PYm\nV47UdsbB1gLlSYc6+p07EE+Tvs53+wL97Q/9Gx0wXeVRluP8w280E4ovNSc0ty7S\nF49WRdBjpQKIWhltGhINlLiq+TWHx+djIJWOHNk/IQKBgQC4u9WF2PM2A216SrHW\ntj/X8e2rSTSgl5daECF44hRrPer6BexeoVxvkQSYaqjK5AiCDACs8zfBHx0yJZZR\nD1K/SMBRaNmoqjGakUDRFoJG0V2BvotpZ2e/aWHMrW+YxQTeZzjy1xCvw/bs6K20\ntADgLM7SeR7lNRdVcjadXVrvjwKBgQC30MYP3HrO3EjHJH96HB7tQJk4uLHYm6bD\n7cviYNFpL22jXeauSBgJintzNT9Bw1EF14u8nqqId0Pgfi1jfofiQ+TDKcWgQ9IH\no+pHPi9H3LKaraqWHt3CY4AY4eyncn5QjGBob5RNEsqAlM2194KsApzPbrHQLnh2\nwCJCtrvyewKBgHYTUQIxThsLC9GrponniV0cfF4L94BiBFKDlvFuB8EYHXXbjV5a\n4vtIhNhq7CJqqGl/BHuHJe7hVUb1MWP0WF59QLeIPf8JcZUrHHPIYFKlhY/lW7Ru\nbKiy0dkCTh8mZttEvOiywC6oIc8BVe33U8v1t+hdlHrKeXSbAP+KaRJPAoGAdUoY\nN6K+EiTpo3ichvROn6DqpBDmGosnXDnuMOMKfI2w7d9LBMYn4F6m6xp85J+WoZ2q\nIo8zzaQcgbDBkYz5c91SqV2MJvlfmVR0d0UssjQXGy/Ze7TyV8lZwYbXlPkvtIH+\nOmWIQa3N3UIWCRiIHu4D1TCS8X3VjCCJO/yR7OUCgYEAjGaOEfhoRhKovIV7XydA\nZbYIJWVnZWjQXSVRTziO90ydVty6Qz1TZ0+LRbYBaM7lS+isl+kTVlfGDnoHXHPZ\n3OUjsDVQP6KNHtZ33pFSz3LyO2CvUPqX4GYrKXvdzc6UqhgbaUPcDmahXAIHMcWT\nlnI2Sb1iobjA00XLfIccgYA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-d058g@russianposttrackbot-yy9j.iam.gserviceaccount.com",
+  "client_id": "110681118876519306444",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-d058g%40russianposttrackbot-yy9j.iam.gserviceaccount.com"
+}

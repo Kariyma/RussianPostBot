@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "russianposttrackbot-yy9j",
+  "private_key_id": "37619a260bd7faa9de4c0119fd111fca9e3dafe4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkyssKaoq5Qo/r\nyB6qJmMHGhSgi6iA7K52tbPNMLh0l7LduyMkeQNFbiw6Hj8/Fh0VfVu47GGrKEU1\nHi2j6xCmgyFv+oIlofrZ7+GfbVsmzb9SQaCyCpEZZaXqZvwXkZT2PdxP8I3B3Rz8\nAF5M/MWoDCdkRt1eEuVSxcRq8pCO8Y34IAXsbhPzlzvd/au7cmk60k8nouwDO2pt\nmV+9OfRqFS4nbrYyR8BfpToYjTkaOawUXT6vF49RbemO6jesY1QM5VcWOQ5Y3e9X\nrl/NyDjw+FRUKrEpOzL0VQIncDqCFkCNE0PqqTls/08TpJsYi7nohKwNO0L0l+xf\niUcz/X8xAgMBAAECggEAO8rE/wOHUA7hr3hOAAirl7ET2OizfAvkhXgKRCIwW0WL\nhb5X0u0BjdiavX+qDRbV+K0icad7DKIw8kP/5WDuCqy7niizvjnWjerm33TLRPoU\nOCFN0CvbV+6006cIQvj0pp/tZyfuF3BGCv2LOb3hbcbzKAQ6X97VTEIrsW5Pmz1e\ny4nsMmgjlW2+t7aKGUUvWHJhfU0/3O6/U4U75WTN+BJmjdYh0ixeuNEi3jl38/WU\nAPoi1NIc9VAtqDj7wygHoV7/Az05UEf/ByODLCg+gFaBsge0aCip80amDc3NXpJU\nTc8YtU0JCQ5pAzatvE6H0zvYJ3J7REoSQAqklzl2rQKBgQDWB0jFEf3U02rdyFV2\nXAK7B/xAIf4mIJ214e7BHeht5Iq0rzifRjbf9SJOfv7QYY9hWSvOcnLc64G7jP0u\nXf5uM9lNkfif1zUrrg9s8FNi3HOoau/8TXzcEDZDtRr6hUgx+JYhGOuj1oVhIXPy\nVXEr8SvzYKmy6kmmZ+54sDhGjwKBgQDFG7wdl3t5tQHJhbnuV5L8VHiyxfd8IHK/\nNitR/tB4zq4G9kK7dp6nEIsKhq4iTDGsGheXgA80kBc7g6hfSorOeJFjl28NakBE\noqvPez8LECs1FUdXQE5c9rIG/hMdH7M627jIpAKcbFAHOmvRXvJVBIRGkHEFTcg7\nt4ngRNq+PwKBgQCetawapurJZTU73RCywiwsMRG3JP3nnAwXEcEQZ3Mx+mV48u5T\n/ac3j/mup7GhKJdAIvW/E1NlyyXaxAQC3CSN59jeEr6BGP8OsvYxXE0ZZExHuXTY\nbUWHkmYK80NcPnV4yNPbGzWxuqQRkNMAAqf3Y9GpmiZ8zAttYGiQCmzQtQKBgBo+\nhR+Tidc8qI5Che0cL+/091UmUrtuPpkDB2WVfgB31GgM5fm744fvBfRS1mCusHZv\nyvBbFqsy/ETqVMLLVAwFtaYDBcBNg10gI6wuhshcUMRyntsZLtXl6vJPZhAcpmqR\n0tq0K7zUFxu/RZfNAosbXNlgZgwEvUJmP69iu5VVAoGAGAQGWInb9OHZUDwIjF7C\n3o1jziUIjgW8apFsU4qquWqQ7VYPpxJQwP+X7E/avyGoLPhhjc50dQeVFt1WLXFG\nUnH8GX+gRVlGG4ixlsMvsEhRzTyaCkroRAd4hGwGQcsh7P0/dHExDMk25sFiKGhT\nG5di86YdGvJY1YFKVnXoPcY=\n-----END PRIVATE KEY-----\n",
+  "client_email": "russianposttrackbot@russianposttrackbot-yy9j.iam.gserviceaccount.com",
+  "client_id": "117443754162797874027",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/russianposttrackbot%40russianposttrackbot-yy9j.iam.gserviceaccount.com"
+}

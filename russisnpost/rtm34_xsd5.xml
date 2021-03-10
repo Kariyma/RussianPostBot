@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tns="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://russianpost.org/operationhistory/data">
+
+<xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=3"/>
+
+<xs:element name="AuthorizationFaultReason" type="xs:string"/>
+
+<xs:element name="AuthorizationHeader">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="login" type="xs:string"/>
+<xs:element name="password" type="xs:string"/>
+</xs:sequence>
+<xs:attribute ref="ns1:mustUnderstand"/>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="LanguageData">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Language" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence/>
+<xs:attribute name="name" type="xs:string"/>
+<xs:attribute name="code" type="xs:string"/>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="LanguageFaultReason" type="xs:string"/>
+
+<xs:element name="OperationHistoryData">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="historyRecord" type="tns:OperationHistoryRecord" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="OperationHistoryFaultReason" type="xs:string"/>
+
+<xs:element name="OperationHistoryRequest">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Barcode" type="xs:string"/>
+<xs:element name="MessageType" type="xs:int"/>
+<xs:element name="Language" type="xs:string" default="RUS" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+
+<xs:element name="UpdateOperationRequest" type="tns:UpdateOperationRequest"/>
+
+<xs:complexType name="OperationHistoryRecord">
+<xs:sequence>
+<xs:element name="AddressParameters" type="tns:AddressParameters"/>
+<xs:element name="FinanceParameters" type="tns:FinanceParameters"/>
+<xs:element name="ItemParameters" type="tns:ItemParameters"/>
+<xs:element name="OperationParameters" type="tns:OperationParameters"/>
+<xs:element name="UserParameters" type="tns:UserParameters"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AddressParameters">
+<xs:sequence>
+<xs:element name="DestinationAddress" type="tns:Address" minOccurs="0"/>
+<xs:element name="OperationAddress" type="tns:Address"/>
+<xs:element name="MailDirect" type="tns:Country" minOccurs="0"/>
+<xs:element name="CountryFrom" type="tns:Country" minOccurs="0"/>
+<xs:element name="CountryOper" type="tns:Country"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Address">
+<xs:sequence>
+<xs:element name="Index" type="xs:string" minOccurs="0"/>
+<xs:element name="Description" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Country">
+<xs:sequence>
+<xs:element name="Id" type="xs:int"/>
+<xs:element name="Code2A" type="xs:string" minOccurs="0"/>
+<xs:element name="Code3A" type="xs:string" minOccurs="0"/>
+<xs:element name="Name" type="xs:string" minOccurs="0"/>
+<xs:element name="NameRU" type="xs:string" minOccurs="0"/>
+<xs:element name="NameEN" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FinanceParameters">
+<xs:sequence>
+<xs:element name="Payment" type="xs:integer" minOccurs="0"/>
+<xs:element name="Value" type="xs:integer" minOccurs="0"/>
+<xs:element name="MassRate" type="xs:integer" minOccurs="0"/>
+<xs:element name="InsrRate" type="xs:integer" minOccurs="0"/>
+<xs:element name="AirRate" type="xs:integer" minOccurs="0"/>
+<xs:element name="Rate" type="xs:integer" minOccurs="0"/>
+<xs:element name="CustomDuty" type="xs:integer"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ItemParameters">
+<xs:sequence>
+<xs:element name="Barcode" type="xs:string"/>
+<xs:element name="Internum" type="xs:string" minOccurs="0"/>
+<xs:element name="ValidRuType" type="xs:boolean"/>
+<xs:element name="ValidEnType" type="xs:boolean"/>
+<xs:element name="ComplexItemName" type="xs:string"/>
+<xs:element name="MailRank" type="tns:Rtm02Parameter" minOccurs="0"/>
+<xs:element name="PostMark" type="tns:Rtm02Parameter" minOccurs="0"/>
+<xs:element name="MailType" type="tns:Rtm02Parameter"/>
+<xs:element name="MailCtg" type="tns:Rtm02Parameter"/>
+<xs:element name="Mass" type="xs:integer"/>
+<xs:element name="MaxMassRU" type="xs:integer"/>
+<xs:element name="MaxMassEN" type="xs:integer"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Rtm02Parameter">
+<xs:sequence>
+<xs:element name="Id" type="xs:int"/>
+<xs:element name="Name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="OperationParameters">
+<xs:sequence>
+<xs:element name="OperType" type="tns:Rtm02Parameter"/>
+<xs:element name="OperAttr" type="tns:Rtm02Parameter"/>
+<xs:element name="OperDate" type="xs:dateTime"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UserParameters">
+<xs:sequence>
+<xs:element name="SendCtg" type="tns:Rtm02Parameter" minOccurs="0"/>
+<xs:element name="Sndr" type="xs:string" minOccurs="0"/>
+<xs:element name="Rcpn" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="UpdateOperationRequest">
+<xs:sequence>
+<xs:element name="RequestType" type="tns:RequestType"/>
+<xs:element name="SourceOperation" type="tns:OperationHistoryRecord"/>
+<xs:element name="TargetOperation" type="tns:OperationHistoryRecord" minOccurs="0"/>
+<xs:element name="ReasonDescription" type="xs:string"/>
+<xs:element name="InitiatorDepartment" type="xs:integer"/>
+<xs:element name="ExecutorIP" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="RequestType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="update"/>
+<xs:enumeration value="delete"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

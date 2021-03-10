@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9b8f6ff7-21f8-426b-baf0-c1246512ea88" activeEnvironment="Default" name="PochtaRu" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8084c911-f1f3-4578-bddc-03493578324b" wsaVersion="NONE" name="OperationHistory12PortBinding" type="wsdl" bindingName="{http://russianpost.org/operationhistory}OperationHistory12PortBinding" soapVersion="1_2" anonymous="optional" definition="https://tracking.russianpost.ru/tracking-web-static/rtm34_wsdl.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://tracking.russianpost.ru/tracking-web-static/rtm34_wsdl.xml"><con:part><con:url>https://tracking.russianpost.ru/tracking-web-static/rtm34_wsdl.xml</con:url><con:content><![CDATA[<definitions targetNamespace="http://russianpost.org/operationhistory" name="OperationHistory12" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://russianpost.org/operationhistory" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.russianpost.org/custom-duty-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=1"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=2"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=3"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://russianpost.org/sms-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=4"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://russianpost.org/operationhistory/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=5"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://russianpost.org/operationhistory" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=6"/>
+    </xsd:schema>
+  </types>
+  <message name="getOperationHistory">
+    <part name="parameters" element="tns:getOperationHistory"/>
+  </message>
+  <message name="getOperationHistoryResponse">
+    <part name="parameters" element="tns:getOperationHistoryResponse"/>
+  </message>
+  <message name="OperationHistoryFault">
+    <part name="fault" element="ns1:OperationHistoryFaultReason" xmlns:ns1="http://russianpost.org/operationhistory/data"/>
+  </message>
+  <message name="AuthorizationFault">
+    <part name="fault" element="ns2:AuthorizationFaultReason" xmlns:ns2="http://russianpost.org/operationhistory/data"/>
+  </message>
+  <message name="getLanguages">
+    <part name="parameters" element="tns:getLanguages"/>
+  </message>
+  <message name="getLanguagesResponse">
+    <part name="parameters" element="tns:getLanguagesResponse"/>
+  </message>
+  <message name="LanguageFault">
+    <part name="fault" element="ns3:LanguageFaultReason" xmlns:ns3="http://russianpost.org/operationhistory/data"/>
+  </message>
+  <message name="getCustomDutyEventsForMail">
+    <part name="parameters" element="tns:getCustomDutyEventsForMail"/>
+  </message>
+  <message name="getCustomDutyEventsForMailResponse">
+    <part name="parameters" element="tns:getCustomDutyEventsForMailResponse"/>
+  </message>
+  <message name="CustomDutyEventsForMailFault">
+    <part name="fault" element="ns4:CustomDutyEventsForMailFault" xmlns:ns4="http://www.russianpost.org/custom-duty-info/data"/>
+  </message>
+  <message name="getSmsHistory">
+    <part name="parameters" element="tns:getSmsHistory"/>
+  </message>
+  <message name="getSmsHistoryResponse">
+    <part name="parameters" element="tns:getSmsHistoryResponse"/>
+  </message>
+  <message name="SmsHistoryFault">
+    <part name="fault" element="ns5:SmsHistoryFaultReason" xmlns:ns5="http://russianpost.org/sms-info/data"/>
+  </message>
+  <message name="PostalOrderEventsForMail">
+    <part name="parameters" element="tns:PostalOrderEventsForMail"/>
+  </message>
+  <message name="PostalOrderEventsForMailResponse">
+    <part name="parameters" element="tns:PostalOrderEventsForMailResponse"/>
+  </message>
+  <message name="PostalOrderEventsForMailFault">
+    <part name="fault" element="ns6:PostalOrderEventsForMailFault" xmlns:ns6="http://www.russianpost.org/RTM/DataExchangeESPP/Data"/>
+  </message>
+  <portType name="OperationHistory12">
+    <operation name="getOperationHistory">
+      <input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryRequest" message="tns:getOperationHistory"/>
+      <output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryResponse" message="tns:getOperationHistoryResponse"/>
+      <fault message="tns:OperationHistoryFault" name="OperationHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistory/Fault/OperationHistoryFault"/>
+      <fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistory/Fault/AuthorizationFault"/>
+    </operation>
+    <operation name="getLanguages">
+      <input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguagesRequest" message="tns:getLanguages"/>
+      <output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguagesResponse" message="tns:getLanguagesResponse"/>
+      <fault message="tns:OperationHistoryFault" name="OperationHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/OperationHistoryFault"/>
+      <fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/AuthorizationFault"/>
+      <fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/LanguageFault"/>
+    </operation>
+    <operation name="getCustomDutyEventsForMail">
+      <input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMailRequest" message="tns:getCustomDutyEventsForMail"/>
+      <output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMailResponse" message="tns:getCustomDutyEventsForMailResponse"/>
+      <fault message="tns:CustomDutyEventsForMailFault" name="CustomDutyEventsForMailFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/CustomDutyEventsForMailFault"/>
+      <fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/AuthorizationFault"/>
+      <fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/LanguageFault"/>
+    </operation>
+    <operation name="getSmsHistory">
+      <input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistoryRequest" message="tns:getSmsHistory"/>
+      <output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistoryResponse" message="tns:getSmsHistoryResponse"/>
+      <fault message="tns:SmsHistoryFault" name="SmsHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/SmsHistoryFault"/>
+      <fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/AuthorizationFault"/>
+      <fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/LanguageFault"/>
+    </operation>
+    <operation name="PostalOrderEventsForMail">
+      <input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMailRequest" message="tns:PostalOrderEventsForMail"/>
+      <output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMailResponse" message="tns:PostalOrderEventsForMailResponse"/>
+      <fault message="tns:PostalOrderEventsForMailFault" name="PostalOrderEventsForMailFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMail/Fault/PostalOrderEventsForMailFault"/>
+    </operation>
+  </portType>
+  <binding name="OperationHistory12PortBinding" type="tns:OperationHistory12">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="getOperationHistory">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+      <fault name="OperationHistoryFault">
+        <soap12:fault name="OperationHistoryFault" use="literal"/>
+      </fault>
+      <fault name="AuthorizationFault">
+        <soap12:fault name="AuthorizationFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getLanguages">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+      <fault name="OperationHistoryFault">
+        <soap12:fault name="OperationHistoryFault" use="literal"/>
+      </fault>
+      <fault name="AuthorizationFault">
+        <soap12:fault name="AuthorizationFault" use="literal"/>
+      </fault>
+      <fault name="LanguageFault">
+        <soap12:fault name="LanguageFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getCustomDutyEventsForMail">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+      <fault name="CustomDutyEventsForMailFault">
+        <soap12:fault name="CustomDutyEventsForMailFault" use="literal"/>
+      </fault>
+      <fault name="AuthorizationFault">
+        <soap12:fault name="AuthorizationFault" use="literal"/>
+      </fault>
+      <fault name="LanguageFault">
+        <soap12:fault name="LanguageFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getSmsHistory">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+      <fault name="SmsHistoryFault">
+        <soap12:fault name="SmsHistoryFault" use="literal"/>
+      </fault>
+      <fault name="AuthorizationFault">
+        <soap12:fault name="AuthorizationFault" use="literal"/>
+      </fault>
+      <fault name="LanguageFault">
+        <soap12:fault name="LanguageFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="PostalOrderEventsForMail">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+      <fault name="PostalOrderEventsForMailFault">
+        <soap12:fault name="PostalOrderEventsForMailFault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="OperationHistory12">
+    <port name="OperationHistory12Port" binding="tns:OperationHistory12PortBinding">
+      <soap12:address location="https://tracking.russianpost.ru/rtm34"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=1</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.russianpost.org/custom-duty-info/data" xmlns:tns="http://www.russianpost.org/custom-duty-info/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CustomDutyEvent" type="tns:CustomDutyEvent"/>
+  <xs:element name="CustomDutyEventsForMailFault" type="tns:CustomDutyEventsForMailFault"/>
+  <xs:element name="CustomDutyEventsForMailInput" type="tns:CustomDutyEventsForMailInput"/>
+  <xs:element name="CustomDutyEventsForMailOutput" type="tns:CustomDutyEventsForMailOutput"/>
+  <xs:complexType name="CustomDutyEventsForMailInput">
+    <xs:sequence/>
+    <xs:attribute name="Barcode" type="xs:string" use="required"/>
+    <xs:attribute name="Language" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="CustomDutyEventsForMailOutput">
+    <xs:sequence>
+      <xs:element name="CustomDutyEvent" type="tns:CustomDutyEvent" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomDutyEvent">
+    <xs:sequence/>
+    <xs:attribute name="Number" type="xs:string" use="required"/>
+    <xs:attribute name="EventDateTime" type="xs:dateTime"/>
+    <xs:attribute name="EventType" type="xs:integer" use="required"/>
+    <xs:attribute name="EventName" type="xs:string"/>
+    <xs:attribute name="IndexTo" type="xs:string"/>
+    <xs:attribute name="IndexEvent" type="xs:string"/>
+    <xs:attribute name="CountryEventCode" type="xs:string"/>
+    <xs:attribute name="CountryToCode" type="xs:string"/>
+    <xs:attribute name="SumPaymentForward" type="xs:integer" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="CustomDutyEventsForMailFault">
+    <xs:sequence/>
+    <xs:attribute name="ErrorID" type="tns:CustomDutyEventsForMailErrors"/>
+  </xs:complexType>
+  <xs:simpleType name="CustomDutyEventsForMailErrors">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BarcodeIsNull"/>
+      <xs:enumeration value="InternalServiceError"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=2</con:url><con:content><![CDATA[<xs:schema version="1.0" targetNamespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data" xmlns:tns="http://www.russianpost.org/RTM/DataExchangeESPP/Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Login" type="xs:string"/>
+  <xs:element name="Password" type="xs:string"/>
+  <xs:element name="PostalOrderEvent" type="tns:PostalOrderEvent"/>
+  <xs:element name="PostalOrderEventsForMaiOutput" type="tns:PostalOrderEventsForMaiOutput"/>
+  <xs:element name="PostalOrderEventsForMailError" type="tns:PostalOrderEventsForMailError"/>
+  <xs:element name="PostalOrderEventsForMailFault" type="tns:PostalOrderEventsForMailFault"/>
+  <xs:element name="PostalOrderEventsForMailInput" type="tns:PostalOrderEventsForMailInput"/>
+  <xs:complexType name="PostalOrderEvent">
+    <xs:sequence/>
+    <xs:attribute name="Number" type="xs:string"/>
+    <xs:attribute name="EventDateTime" type="xs:dateTime"/>
+    <xs:attribute name="EventType" type="xs:integer"/>
+    <xs:attribute name="EventName" type="xs:string"/>
+    <xs:attribute name="IndexTo" type="xs:integer"/>
+    <xs:attribute name="IndexEvent" type="xs:integer"/>
+    <xs:attribute name="SumPaymentForward" type="xs:integer"/>
+    <xs:attribute name="CountryEventCode" type="xs:string"/>
+    <xs:attribute name="CountryToCode" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMailError">
+    <xs:sequence/>
+    <xs:attribute name="ErrorID" type="tns:PostalOrderEventsForMailErrors"/>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMailInput">
+    <xs:sequence/>
+    <xs:attribute name="Barcode" type="xs:string" use="required"/>
+    <xs:attribute name="Language" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMaiOutput">
+    <xs:sequence>
+      <xs:element name="PostalOrderEvent" type="tns:PostalOrderEvent" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMailFault">
+    <xs:sequence>
+      <xs:element name="PostalOrderEventsForMailError" type="tns:PostalOrderEventsForMailError" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PostalOrderEventsForMailErrors">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="InvalidLoginOrPassword"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=3</con:url><con:content>&lt;xs:schema version="1.0" targetNamespace="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema">&#13;
+  &lt;xs:attribute name="mustUnderstand" type="xs:string"/>&#13;
+&lt;/xs:schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=4</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://russianpost.org/sms-info/data" xmlns:tns="http://russianpost.org/sms-info/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AuthorisationFaultReason" type="xs:string"/>
+  <xs:element name="LanguageData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Language" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence/>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="code" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LanguageFaultReason" type="xs:string"/>
+  <xs:element name="SmsHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="historyRecord" type="tns:SmsHistoryRecord" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SmsHistoryFaultReason" type="xs:string"/>
+  <xs:element name="SmsHistoryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Barcode" type="xs:string"/>
+        <xs:element name="Language" type="xs:string" default="RUS" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SmsHistoryRecord">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:integer"/>
+      <xs:element name="Number" type="xs:string"/>
+      <xs:element name="NotificationTypeID" type="xs:integer"/>
+      <xs:element name="NotificationTypeName" type="xs:string"/>
+      <xs:element name="NotificationStatusID" type="xs:integer"/>
+      <xs:element name="NotificationStatusName" type="xs:string"/>
+      <xs:element name="NotificationStatusDate" type="xs:dateTime"/>
+      <xs:element name="SendedID" type="xs:integer"/>
+      <xs:element name="SourceOperation" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=5</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://russianpost.org/operationhistory/data" xmlns:tns="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=3"/>
+  <xs:element name="AuthorizationFaultReason" type="xs:string"/>
+  <xs:element name="AuthorizationHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="login" type="xs:string"/>
+        <xs:element name="password" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute ref="ns1:mustUnderstand"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LanguageData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Language" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence/>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="code" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LanguageFaultReason" type="xs:string"/>
+  <xs:element name="OperationHistoryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="historyRecord" type="tns:OperationHistoryRecord" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OperationHistoryFaultReason" type="xs:string"/>
+  <xs:element name="OperationHistoryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Barcode" type="xs:string"/>
+        <xs:element name="MessageType" type="xs:int"/>
+        <xs:element name="Language" type="xs:string" default="RUS" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOperationRequest" type="tns:UpdateOperationRequest"/>
+  <xs:complexType name="OperationHistoryRecord">
+    <xs:sequence>
+      <xs:element name="AddressParameters" type="tns:AddressParameters"/>
+      <xs:element name="FinanceParameters" type="tns:FinanceParameters"/>
+      <xs:element name="ItemParameters" type="tns:ItemParameters"/>
+      <xs:element name="OperationParameters" type="tns:OperationParameters"/>
+      <xs:element name="UserParameters" type="tns:UserParameters"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressParameters">
+    <xs:sequence>
+      <xs:element name="DestinationAddress" type="tns:Address" minOccurs="0"/>
+      <xs:element name="OperationAddress" type="tns:Address"/>
+      <xs:element name="MailDirect" type="tns:Country" minOccurs="0"/>
+      <xs:element name="CountryFrom" type="tns:Country" minOccurs="0"/>
+      <xs:element name="CountryOper" type="tns:Country"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Index" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Country">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:int"/>
+      <xs:element name="Code2A" type="xs:string" minOccurs="0"/>
+      <xs:element name="Code3A" type="xs:string" minOccurs="0"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="NameRU" type="xs:string" minOccurs="0"/>
+      <xs:element name="NameEN" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FinanceParameters">
+    <xs:sequence>
+      <xs:element name="Payment" type="xs:integer"/>
+      <xs:element name="Value" type="xs:integer"/>
+      <xs:element name="MassRate" type="xs:integer"/>
+      <xs:element name="InsrRate" type="xs:integer"/>
+      <xs:element name="AirRate" type="xs:integer"/>
+      <xs:element name="Rate" type="xs:integer"/>
+      <xs:element name="CustomDuty" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemParameters">
+    <xs:sequence>
+      <xs:element name="Barcode" type="xs:string"/>
+      <xs:element name="Internum" type="xs:string" minOccurs="0"/>
+      <xs:element name="ValidRuType" type="xs:boolean"/>
+      <xs:element name="ValidEnType" type="xs:boolean"/>
+      <xs:element name="ComplexItemName" type="xs:string"/>
+      <xs:element name="MailRank" type="tns:Rtm02Parameter" minOccurs="0"/>
+      <xs:element name="PostMark" type="tns:Rtm02Parameter"/>
+      <xs:element name="MailType" type="tns:Rtm02Parameter"/>
+      <xs:element name="MailCtg" type="tns:Rtm02Parameter"/>
+      <xs:element name="Mass" type="xs:integer"/>
+      <xs:element name="MaxMassRU" type="xs:integer"/>
+      <xs:element name="MaxMassEN" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Rtm02Parameter">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:int"/>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationParameters">
+    <xs:sequence>
+      <xs:element name="OperType" type="tns:Rtm02Parameter"/>
+      <xs:element name="OperAttr" type="tns:Rtm02Parameter"/>
+      <xs:element name="OperDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UserParameters">
+    <xs:sequence>
+      <xs:element name="SendCtg" type="tns:Rtm02Parameter" minOccurs="0"/>
+      <xs:element name="Sndr" type="xs:string" minOccurs="0"/>
+      <xs:element name="Rcpn" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UpdateOperationRequest">
+    <xs:sequence>
+      <xs:element name="RequestType" type="tns:RequestType"/>
+      <xs:element name="SourceOperation" type="tns:OperationHistoryRecord"/>
+      <xs:element name="TargetOperation" type="tns:OperationHistoryRecord" minOccurs="0"/>
+      <xs:element name="ReasonDescription" type="xs:string"/>
+      <xs:element name="InitiatorDepartment" type="xs:integer"/>
+      <xs:element name="ExecutorIP" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="RequestType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="update"/>
+      <xs:enumeration value="delete"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>https://tracking.russianpost.ru/rtm34?xsd=6</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://russianpost.org/operationhistory" xmlns:tns="http://russianpost.org/operationhistory" xmlns:ns4="http://www.russianpost.org/RTM/DataExchangeESPP/Data" xmlns:ns3="http://www.russianpost.org/custom-duty-info/data" xmlns:ns2="http://russianpost.org/operationhistory/data" xmlns:ns1="http://russianpost.org/sms-info/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://russianpost.org/sms-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=4"/>
+  <xs:import namespace="http://russianpost.org/operationhistory/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=5"/>
+  <xs:import namespace="http://www.russianpost.org/custom-duty-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=1"/>
+  <xs:import namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=2"/>
+  <xs:element name="PostalOrderEventsForMail" type="tns:PostalOrderEventsForMail"/>
+  <xs:element name="PostalOrderEventsForMailResponse" type="tns:PostalOrderEventsForMailResponse"/>
+  <xs:element name="getCustomDutyEventsForMail" type="tns:getCustomDutyEventsForMail"/>
+  <xs:element name="getCustomDutyEventsForMailResponse" type="tns:getCustomDutyEventsForMailResponse"/>
+  <xs:element name="getLanguages" type="tns:getLanguages"/>
+  <xs:element name="getLanguagesResponse" type="tns:getLanguagesResponse"/>
+  <xs:element name="getOperationHistory" type="tns:getOperationHistory"/>
+  <xs:element name="getOperationHistoryResponse" type="tns:getOperationHistoryResponse"/>
+  <xs:element name="getSmsHistory" type="tns:getSmsHistory"/>
+  <xs:element name="getSmsHistoryResponse" type="tns:getSmsHistoryResponse"/>
+  <xs:complexType name="getSmsHistoryResponse">
+    <xs:sequence>
+      <xs:element ref="ns1:SmsHistoryData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLanguagesResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:LanguageData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLanguages">
+    <xs:sequence>
+      <xs:element ref="ns2:AuthorizationHeader" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomDutyEventsForMail">
+    <xs:sequence>
+      <xs:element ref="ns2:AuthorizationHeader" minOccurs="0"/>
+      <xs:element ref="ns3:CustomDutyEventsForMailInput" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOperationHistory">
+    <xs:sequence>
+      <xs:element ref="ns2:OperationHistoryRequest" minOccurs="0"/>
+      <xs:element ref="ns2:AuthorizationHeader" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMailResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:PostalOrderEventsForMaiOutput" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PostalOrderEventsForMail">
+    <xs:sequence>
+      <xs:element ref="ns2:AuthorizationHeader" minOccurs="0"/>
+      <xs:element ref="ns4:PostalOrderEventsForMailInput" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCustomDutyEventsForMailResponse">
+    <xs:sequence>
+      <xs:element ref="ns3:CustomDutyEventsForMailOutput" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getOperationHistoryResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:OperationHistoryData" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSmsHistory">
+    <xs:sequence>
+      <xs:element ref="ns2:AuthorizationHeader" minOccurs="0"/>
+      <xs:element ref="ns1:SmsHistoryRequest" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint></con:endpoints><con:operation id="0c68d7b2-1b67-4a8f-b268-cc4a314da64a" isOneWay="false" action="" name="getCustomDutyEventsForMail" bindingOperationName="getCustomDutyEventsForMail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3bde2969-2256-4619-a48b-b37f3ce172bd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:data1="http://www.russianpost.org/custom-duty-info/data">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:getCustomDutyEventsForMail>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="?">\r
+            <data:login>?</data:login>\r
+            <data:password>?</data:password>\r
+         </data:AuthorizationHeader>\r
+         <!--Optional:-->\r
+         <data1:CustomDutyEventsForMailInput Barcode="?" Language="?"/>\r
+      </oper:getCustomDutyEventsForMail>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMailRequest"/></con:call></con:operation><con:operation id="b80461c0-fc18-4b99-ba0d-5dc02cb080bc" isOneWay="false" action="" name="getLanguages" bindingOperationName="getLanguages" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4ae32eb1-04f6-4b3b-8c5f-7c8159fb4fec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:getLanguages>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="?">\r
+            <data:login>?</data:login>\r
+            <data:password>?</data:password>\r
+         </data:AuthorizationHeader>\r
+      </oper:getLanguages>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://russianpost.org/operationhistory/OperationHistory12/getLanguagesRequest"/></con:call></con:operation><con:operation id="f3039bc9-de3c-4a2e-8c17-85cd91aa14ce" isOneWay="false" action="" name="getOperationHistory" bindingOperationName="getOperationHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="238e7f7a-f16f-45df-981d-e22e19bfdd7f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:getOperationHistory>\r
+         <!--Optional:-->\r
+         <data:OperationHistoryRequest>\r
+            <data:Barcode>RR273006906BY</data:Barcode>\r
+            <data:MessageType>0</data:MessageType>\r
+            <!--Optional:-->\r
+            <data:Language>RUS</data:Language>\r
+         </data:OperationHistoryRequest>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="1">\r
+            <data:login>oyFFfBDLNkdCHg</data:login>\r
+            <data:password>TBlLgcpiAXTX</data:password>\r
+         </data:AuthorizationHeader>\r
+      </oper:getOperationHistory>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="bcdc7986-c820-485f-9111-5f631f157695" isOneWay="false" action="" name="getSmsHistory" bindingOperationName="getSmsHistory" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c4f657cb-ba0e-4a45-a3ca-93a725cee3c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:data1="http://russianpost.org/sms-info/data">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:getSmsHistory>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="?">\r
+            <data:login>?</data:login>\r
+            <data:password>?</data:password>\r
+         </data:AuthorizationHeader>\r
+         <!--Optional:-->\r
+         <data1:SmsHistoryRequest>\r
+            <data1:Barcode>?</data1:Barcode>\r
+            <!--Optional:-->\r
+            <data1:Language>RUS</data1:Language>\r
+         </data1:SmsHistoryRequest>\r
+      </oper:getSmsHistory>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistoryRequest"/></con:call></con:operation><con:operation id="79fe0954-48aa-4bf0-80b1-e0c6d93ea914" isOneWay="false" action="" name="PostalOrderEventsForMail" bindingOperationName="PostalOrderEventsForMail" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0be95f3d-904d-44b8-9e20-4f3aeddca825" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/" xmlns:data1="http://www.russianpost.org/RTM/DataExchangeESPP/Data">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:PostalOrderEventsForMail>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="?">\r
+            <data:login>?</data:login>\r
+            <data:password>?</data:password>\r
+         </data:AuthorizationHeader>\r
+         <!--Optional:-->\r
+         <data1:PostalOrderEventsForMailInput Barcode="?" Language="?"/>\r
+      </oper:PostalOrderEventsForMail>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMailRequest"/></con:call></con:operation></con:interface><con:testSuite id="f40301d5-c675-4490-9f0f-ab5630a25bd9" name="OperationHistory12PortBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="cca423b1-810b-4a10-8e7e-f2567d7aaab7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="OperationHistory12PortBinding TestSuite" searchProperties="true"><con:settings/><con:testStep type="request" id="3aca3a07-113d-4743-b9fe-7befaa5e3add" name="getOperationHistory"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>OperationHistory12PortBinding</con:interface><con:operation>getOperationHistory</con:operation><con:request name="getOperationHistory" id="713fcf36-abd4-4827-a2ac-db80b01de5ae"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://tracking.russianpost.ru/rtm34</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:oper="http://russianpost.org/operationhistory" xmlns:data="http://russianpost.org/operationhistory/data" xmlns:ns1="http://schemas.xmlsoap.org/soap/envelope/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <oper:getOperationHistory>\r
+         <!--Optional:-->\r
+         <data:OperationHistoryRequest>\r
+            <data:Barcode>?</data:Barcode>\r
+            <data:MessageType>?</data:MessageType>\r
+            <!--Optional:-->\r
+            <data:Language>RUS</data:Language>\r
+         </data:OperationHistoryRequest>\r
+         <!--Optional:-->\r
+         <data:AuthorizationHeader ns1:mustUnderstand="?">\r
+            <data:login>?</data:login>\r
+            <data:password>?</data:password>\r
+         </data:AuthorizationHeader>\r
+      </oper:getOperationHistory>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryRequest"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

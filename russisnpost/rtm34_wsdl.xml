@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://russianpost.org/operationhistory" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://russianpost.org/operationhistory" name="OperationHistory12">
+<types>
+<xsd:schema>
+<xsd:import namespace="http://www.russianpost.org/custom-duty-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=1"/>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://www.russianpost.org/RTM/DataExchangeESPP/Data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=2"/>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://schemas.xmlsoap.org/soap/envelope/" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=3"/>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://russianpost.org/sms-info/data" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=4"/>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://russianpost.org/operationhistory/data" schemaLocation= "rtm34_xsd5.xml"/>
+</xsd:schema>
+<xsd:schema>
+<xsd:import namespace="http://russianpost.org/operationhistory" schemaLocation="https://tracking.russianpost.ru/rtm34?xsd=6"/>
+</xsd:schema>
+</types>
+<message name="getOperationHistory">
+<part name="parameters" element="tns:getOperationHistory"/>
+</message>
+<message name="getOperationHistoryResponse">
+<part name="parameters" element="tns:getOperationHistoryResponse"/>
+</message>
+<message name="OperationHistoryFault">
+<part xmlns:ns1="http://russianpost.org/operationhistory/data" name="fault" element="ns1:OperationHistoryFaultReason"/>
+</message>
+<message name="AuthorizationFault">
+<part xmlns:ns2="http://russianpost.org/operationhistory/data" name="fault" element="ns2:AuthorizationFaultReason"/>
+</message>
+<message name="getLanguages">
+<part name="parameters" element="tns:getLanguages"/>
+</message>
+<message name="getLanguagesResponse">
+<part name="parameters" element="tns:getLanguagesResponse"/>
+</message>
+<message name="LanguageFault">
+<part xmlns:ns3="http://russianpost.org/operationhistory/data" name="fault" element="ns3:LanguageFaultReason"/>
+</message>
+<message name="getCustomDutyEventsForMail">
+<part name="parameters" element="tns:getCustomDutyEventsForMail"/>
+</message>
+<message name="getCustomDutyEventsForMailResponse">
+<part name="parameters" element="tns:getCustomDutyEventsForMailResponse"/>
+</message>
+<message name="CustomDutyEventsForMailFault">
+<part xmlns:ns4="http://www.russianpost.org/custom-duty-info/data" name="fault" element="ns4:CustomDutyEventsForMailFault"/>
+</message>
+<message name="getSmsHistory">
+<part name="parameters" element="tns:getSmsHistory"/>
+</message>
+<message name="getSmsHistoryResponse">
+<part name="parameters" element="tns:getSmsHistoryResponse"/>
+</message>
+<message name="SmsHistoryFault">
+<part xmlns:ns5="http://russianpost.org/sms-info/data" name="fault" element="ns5:SmsHistoryFaultReason"/>
+</message>
+<message name="PostalOrderEventsForMail">
+<part name="parameters" element="tns:PostalOrderEventsForMail"/>
+</message>
+<message name="PostalOrderEventsForMailResponse">
+<part name="parameters" element="tns:PostalOrderEventsForMailResponse"/>
+</message>
+<message name="PostalOrderEventsForMailFault">
+<part xmlns:ns6="http://www.russianpost.org/RTM/DataExchangeESPP/Data" name="fault" element="ns6:PostalOrderEventsForMailFault"/>
+</message>
+<portType name="OperationHistory12">
+<operation name="getOperationHistory">
+<input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryRequest" message="tns:getOperationHistory"/>
+<output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistoryResponse" message="tns:getOperationHistoryResponse"/>
+<fault message="tns:OperationHistoryFault" name="OperationHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistory/Fault/OperationHistoryFault"/>
+<fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getOperationHistory/Fault/AuthorizationFault"/>
+</operation>
+<operation name="getLanguages">
+<input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguagesRequest" message="tns:getLanguages"/>
+<output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguagesResponse" message="tns:getLanguagesResponse"/>
+<fault message="tns:OperationHistoryFault" name="OperationHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/OperationHistoryFault"/>
+<fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/AuthorizationFault"/>
+<fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getLanguages/Fault/LanguageFault"/>
+</operation>
+<operation name="getCustomDutyEventsForMail">
+<input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMailRequest" message="tns:getCustomDutyEventsForMail"/>
+<output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMailResponse" message="tns:getCustomDutyEventsForMailResponse"/>
+<fault message="tns:CustomDutyEventsForMailFault" name="CustomDutyEventsForMailFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/CustomDutyEventsForMailFault"/>
+<fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/AuthorizationFault"/>
+<fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getCustomDutyEventsForMail/Fault/LanguageFault"/>
+</operation>
+<operation name="getSmsHistory">
+<input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistoryRequest" message="tns:getSmsHistory"/>
+<output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistoryResponse" message="tns:getSmsHistoryResponse"/>
+<fault message="tns:SmsHistoryFault" name="SmsHistoryFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/SmsHistoryFault"/>
+<fault message="tns:AuthorizationFault" name="AuthorizationFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/AuthorizationFault"/>
+<fault message="tns:LanguageFault" name="LanguageFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/getSmsHistory/Fault/LanguageFault"/>
+</operation>
+<operation name="PostalOrderEventsForMail">
+<input wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMailRequest" message="tns:PostalOrderEventsForMail"/>
+<output wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMailResponse" message="tns:PostalOrderEventsForMailResponse"/>
+<fault message="tns:PostalOrderEventsForMailFault" name="PostalOrderEventsForMailFault" wsam:Action="http://russianpost.org/operationhistory/OperationHistory12/PostalOrderEventsForMail/Fault/PostalOrderEventsForMailFault"/>
+</operation>
+</portType>
+<binding name="OperationHistory12PortBinding" type="tns:OperationHistory12">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="getOperationHistory">
+<soap12:operation soapAction=""/>
+<input>
+<soap12:body use="literal"/>
+</input>
+<output>
+<soap12:body use="literal"/>
+</output>
+<fault name="OperationHistoryFault">
+<soap12:fault name="OperationHistoryFault" use="literal"/>
+</fault>
+<fault name="AuthorizationFault">
+<soap12:fault name="AuthorizationFault" use="literal"/>
+</fault>
+</operation>
+<operation name="getLanguages">
+<soap12:operation soapAction=""/>
+<input>
+<soap12:body use="literal"/>
+</input>
+<output>
+<soap12:body use="literal"/>
+</output>
+<fault name="OperationHistoryFault">
+<soap12:fault name="OperationHistoryFault" use="literal"/>
+</fault>
+<fault name="AuthorizationFault">
+<soap12:fault name="AuthorizationFault" use="literal"/>
+</fault>
+<fault name="LanguageFault">
+<soap12:fault name="LanguageFault" use="literal"/>
+</fault>
+</operation>
+<operation name="getCustomDutyEventsForMail">
+<soap12:operation soapAction=""/>
+<input>
+<soap12:body use="literal"/>
+</input>
+<output>
+<soap12:body use="literal"/>
+</output>
+<fault name="CustomDutyEventsForMailFault">
+<soap12:fault name="CustomDutyEventsForMailFault" use="literal"/>
+</fault>
+<fault name="AuthorizationFault">
+<soap12:fault name="AuthorizationFault" use="literal"/>
+</fault>
+<fault name="LanguageFault">
+<soap12:fault name="LanguageFault" use="literal"/>
+</fault>
+</operation>
+<operation name="getSmsHistory">
+<soap12:operation soapAction=""/>
+<input>
+<soap12:body use="literal"/>
+</input>
+<output>
+<soap12:body use="literal"/>
+</output>
+<fault name="SmsHistoryFault">
+<soap12:fault name="SmsHistoryFault" use="literal"/>
+</fault>
+<fault name="AuthorizationFault">
+<soap12:fault name="AuthorizationFault" use="literal"/>
+</fault>
+<fault name="LanguageFault">
+<soap12:fault name="LanguageFault" use="literal"/>
+</fault>
+</operation>
+<operation name="PostalOrderEventsForMail">
+<soap12:operation soapAction=""/>
+<input>
+<soap12:body use="literal"/>
+</input>
+<output>
+<soap12:body use="literal"/>
+</output>
+<fault name="PostalOrderEventsForMailFault">
+<soap12:fault name="PostalOrderEventsForMailFault" use="literal"/>
+</fault>
+</operation>
+</binding>
+<service name="OperationHistory12">
+<port name="OperationHistory12Port" binding="tns:OperationHistory12PortBinding">
+<soap12:address location="https://tracking.russianpost.ru/rtm34"/>
+</port>
+</service>
+</definitions>

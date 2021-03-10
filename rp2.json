@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "russianposttrackbot-yy9j",
+  "private_key_id": "6e5b6d3e4596dc62333a29abb98f9276005b932a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDKRPUhjZYBS/4v\nQ0Fv18zu+pKlwf01TkHIfX5UTmDOoAPEsf9kMmdUTmTPZH/WO5g/o10Hd7zRq0ED\nVazD/5Z6OFsTjlzXXbmciJzms4JrNLp40APHvP8837N+/c9w9yGazLOR1xHETGfb\nOP3SagGsTm5db7IFl+mmJkK9uNkBRAxt1u3LMJeTJqthNX//7GvKuqmmFMPIcUM4\nd6Gj+8RUkxnE1nQ6/j76xWbV6jROg58G3yn91eyYotuPGQhB6Cda+m/wjEJFdo25\nrA+ypo9q4KquEozMJA0w132cBT6C+yBDLqffIhIP+wtIL8Xz6OBEtIZzf2sIP8NA\nFqk8T8JdAgMBAAECggEAEQOjbg7boSDMERwyby7DJ5AO0WAjxT3ftTZvL7bHGGJn\n5r4FSl+eBv6wJqzgvvvU1veOLgBhsu5ZoebtSTBg70d5y8eUIi6ZXCQ2tIZBkHSH\nQf3Xb5ADlVKI5gQCFNHI8x1IdppVfYJi0xM0cKRnnx+a04O/gQ5yAj6iKxTXNi6l\nZPDCJnKZygojxsmV+PJTx6aMTluGwPIEdBjYlka2ERAlJpTntxhnCU6qvbFcWeQr\nxkLmqBL3KJMnNFVl9utYTkJFaI2u/PnWggmL5vvfzX+Aw41ypn3fSxNk66SUJifw\nMyoS4t/66ef0jp/EevEG4dBx7mcpPvYXRMtpgeuVSQKBgQD/sM8ADWPzj1AQR+41\nDerc5QfZ5D9SbEXncZrva9248CQ4intTMIDwOTHLbDuIvqPjw/H08huAj/1nneJo\nwo+bYDdElh0BfYsQpcec+YdcxS+eUQIp2RF+cAIqVQC1bcEuK6UQ+M4yV02Sm+MO\nuOnJdswdEgIrXZmbbHsrUAIzpQKBgQDKg5qBYX4ada8SlirxKAXGBRwrWTeYdkQ1\nGbRwCic/GYTkm31Z/zYT2gc8JvVD47dkftuoVC1YQtGCaIHfjiUqHmBpXhNfuW2A\n6iRrRLlqhJE28cVwJvowEalEgir76abrLfc//mZ1dyMB1cPhxPZ7qbqupl0kQzpf\n1f2T5Vs2WQKBgQCLzybw1WGQ3Q0fSeWTdv+0NzuaxfZl4DQ9AF6Cic2cARsdG4Oh\nkkT+lZeHrq/C7tL4iLz1fajSHGmoTaluNOyHPg4aX6aOmRIAUVWbnMmKTXvjKlJv\nhXTOWPqmIQKZMeFOmKjSZemBl0EgaEK4Wx3ifiXPw3gSNET4ulGC9mWtzQKBgQCY\niDtNi/MBVvaAl17MuQpwNdUbyV0YlquVG0FOyjb5Te1MitkFejZvCV89rVI6yj+N\nkAc+Z/ina9yFztVTXqsbaDnR4yvQg8e4u6KmsOK/Gg6ORdgiOxliL0tA8JITn887\ngCmkp6bgftV9QlcBq+rDBfo4JdItx/0lxfXy+WOUMQKBgDPE1Qdqg/URR7in8rmx\nNeWtg+Js7F1HkSPxVuJuYrBZtId2JQ7VpDg8PfqBUkZJXqo3NFX79Us9ccQYXOCP\nMzIG522oEiN4o2z61HRFFEy/iwKj4jeqQXXPbcBwWnSzjzrbwMOiC+HaGkigJx8V\nPOTw+4192Vyqvj0oYotFHnBr\n-----END PRIVATE KEY-----\n",
+  "client_email": "russianposttrackbot-yy9j@appspot.gserviceaccount.com",
+  "client_id": "110840971788759078160",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/russianposttrackbot-yy9j%40appspot.gserviceaccount.com"
+}
