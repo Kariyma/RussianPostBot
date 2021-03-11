@@ -2,6 +2,7 @@ import re
 import telebot
 import zeep
 import auth_data
+import my_dialogflow as df
 
 
 def replace_p(string: str, start: int, end: int, old: str, new: str):
@@ -126,25 +127,35 @@ def telegram_bot(token):
 
     @bot.message_handler(commands=["start"])
     def start_message(message):
-        bot.send_message(message.chat.id, "Здравствуйте. Я бот, меня зовут Аля. \
-        Я умею находить текущее местоположение почтового отправления по его трек-номеру. \
-        Просто сообщите мне нужный номер или несколько и я найду, где они сейча.")
+        bot.send_message(message.chat.id, "Здравствуйте. Я бот, меня зовут Аля.\n"
+                         "Я умею находить текущее местоположение почтового отправления по его трек-номеру.\n"
+                         "Просто сообщите мне нужный номер или несколько и я найду, где они сейчас.")
 
     @bot.message_handler(content_types=["text"])
     def send_text(message):
+
         if re.findall("(?:[A-Z]{2}(?:\d|O|О){9}[A-Z]{2})|(?:(?:\d|O|О){14})", message.text.strip().upper()):
             send_messages_text = get_last_location_russian_post(auth_data.russian_post_login,
                                                                 auth_data.russian_pos_password,
                                                                 message.text.strip().upper())
             for text in send_messages_text:
                 bot.send_message(message.chat.id, text)
+        elif re.findall("([\d]{4,})",message.text.strip().upper()):
+            bot.send_message(message.chat.id, "DosntLoolLilkBarcode")
         else:
-            bot.send_message(message.chat.id, 'Хм... дайте подумаю...')
+            to_telegram_text = df.dialogflow_get(auth_data.dialogflow_settings,
+                                                                message.chat.id, message.text)
+
+            bot.send_message(message.chat.id, to_telegram_text if to_telegram_text != '' else 'Кажется Аля не знает,'
+                                                                                              'что ответить. Извините.')
     bot.polling()
 
 
 def main():
+    df.dialogflow_init(auth_data.dialogflow_key_json)
     telegram_bot(auth_data.token_bot)
+
 
 if __name__ == '__main__':
    main()
+
