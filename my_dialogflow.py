@@ -53,6 +53,25 @@ def dialogflow_send_event(dialogflow_settings, session_id, event_name):
     print("Fulfillment text:", response.query_result.fulfillment_text)
 
 
+def dialogflow_get_todo(dialogflow_settings, session_id, message_text):
+    session_client = dialogflow.SessionsClient()
+    session = session_client.session_path(dialogflow_settings['dialogflow_project_id'], session_id)
+    text_input = dialogflow.types.TextInput({'text': message_text,
+                                             'language_code': dialogflow_settings['dialogflow_language_code']})
+    query_input = dialogflow.types.QueryInput({'text': text_input})
+    try:
+        response = session_client.detect_intent(session=session, query_input=query_input)
+    except InvalidArgument:
+         raise
+    print("Query text:", response.query_result.query_text)
+    print("Detected intent:", response.query_result.intent.display_name)
+    print("Detected intent confidence:", response.query_result.intent_detection_confidence)
+    print("Fulfillment text:", response.query_result.fulfillment_text)
+
+    return response.query_result.parameters.get('to_do')
+
+
+
 def main():
 
     dialogflow_settings = {'dialogflow_project_id': 'russianposttrackbot-yy9j', 'dialogflow_language_code': 'Ru-ru'}

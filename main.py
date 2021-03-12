@@ -3,6 +3,7 @@ import telebot
 import zeep
 import auth_data
 import my_dialogflow as df
+import time
 
 
 def replace_p(string: str, start: int, end: int, old: str, new: str):
@@ -133,8 +134,9 @@ def telegram_bot(token):
 
     @bot.message_handler(content_types=["text"])
     def send_text(message):
-
+        to_do = df.dialogflow_get_todo(auth_data.dialogflow_settings, message.chat.id, message.text)
         if re.findall("(?:[A-Z]{2}(?:\d|O|О){9}[A-Z]{2})|(?:(?:\d|O|О){14})", message.text.strip().upper()):
+
             send_messages_text = get_last_location_russian_post(auth_data.russian_post_login,
                                                                 auth_data.russian_pos_password,
                                                                 message.text.strip().upper())
@@ -148,7 +150,9 @@ def telegram_bot(token):
 
             bot.send_message(message.chat.id, to_telegram_text if to_telegram_text != '' else 'Кажется Аля не знает,'
                                                                                               'что ответить. Извините.')
+
     bot.polling()
+
 
 
 def main():
